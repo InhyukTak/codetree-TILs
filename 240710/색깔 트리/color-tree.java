@@ -113,23 +113,12 @@ public class Main {
         Arrays.fill(tree[mId].colors, false);
         tree[mId].colors[tree[mId].color] = true;
         if (children[mId] != null) {
-            if (children[mId].size() == 1) {
-                int child = children[mId].get(0);
+            for (int child : children[mId]) {
                 selectValue(child);
                 for (int i = 1; i <= 5; i++) {
                     if (tree[child].colors[i]) {
                         tree[mId].colors[i] = true;
                     }
-                }
-            } else {
-                int child1 = children[mId].get(0);
-                int child2 = children[mId].get(1);
-                selectValue(child1);
-                selectValue(child2);
-                for (int i = 1; i <= 5; i++) {
-                  if (tree[child1].colors[i] || tree[child2].colors[i]) {
-                      tree[mId].colors[i] = true;
-                  }
                 }
             }
             int cnt = 0;
