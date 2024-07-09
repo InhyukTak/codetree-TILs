@@ -94,9 +94,7 @@ public class Main {
                                     }
                                 }
                             }
-                            while (!deque.isEmpty()) {
-                                deque.poll();
-                            }
+                            deque.clear();
                             totalValue += value * value;
                         }
                     }
