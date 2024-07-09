@@ -7,22 +7,12 @@ public class Main {
         int pId;
         int color;
         int maxDepth;
-        // int depth;
-        // int value;
         public Node(int mId, int pId, int color, int maxDepth) {
             this.mId = mId;
             this.pId = pId;
             this.color = color;
             this.maxDepth = maxDepth;
         }
-        // public Node(int mId, int pId, int color, int maxDepth, int depth, int value) {
-        //     this.mId = mId;
-        //     this.pId = pId;
-        //     this.color = color;
-        //     this.maxDepth = maxDepth;
-        //     this.depth = depth;
-        //     int value = value;
-        // }
     }
 
     // 노드 추가 100 m_id p_id color max_depth
@@ -103,6 +93,9 @@ public class Main {
                                         deque.add(tree[child]);
                                     }
                                 }
+                            }
+                            while (!deque.isEmpty()) {
+                                deque.poll();
                             }
                             totalValue += value * value;
                         }
